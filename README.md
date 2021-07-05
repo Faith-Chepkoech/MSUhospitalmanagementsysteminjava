@@ -10,4 +10,17 @@ It's integrated management system for managing all aspects of a hospital's
  CONTRIBUTORS
  Faith chepkoech @Space-tech-world.
  ---
+ REQUIREMENTS
+ -Netbeans IDE 8.2/eclipse
+     ---
+     Libraries
+   -JDK 1.8
+   -MySQL-connector-java 8.0.25.jar
+   -MYSQL JDBC Driver(ensure the one downloaded is compatible with mysql java connector).
+   -rs2xml
+   -absolutelayout.jar
+
+-MYSQL workbench/MYSQL command line client 8.0
+
+ 
  
