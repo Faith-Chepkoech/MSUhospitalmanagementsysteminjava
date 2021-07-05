@@ -17,6 +17,7 @@ is divided into following sections:
   - test debugging
   - applet
   - cleanup
+-build and run
 
         -->
 <project xmlns:j2seproject1="http://www.netbeans.org/ns/j2se-project/1" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxrpc="http://www.netbeans.org/ns/j2se-project/jax-rpc" basedir=".." default="default" name="maseno_hospital_management_system_in_java-impl">
