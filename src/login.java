@@ -1,7 +1,9 @@
+import java.sql.Connection;
+import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import project.connectionprovider;
 
-/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -140,15 +142,40 @@ if(JOptionPane.showConfirmDialog(frame, "confirm if you want to close this appli
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-if(jTextField1.getText().equals("ro")&& jPasswordField1.getText().equals("admin"))
-{
-    setVisible(false);
-    new home().setVisible(true);
-}
-else
-    JOptionPane.showMessageDialog(null,"incorrect username or password");
+         if(jTextField1.getText().equals("")&& jPasswordField1.getText().equals(""))
+           {
+          setVisible(false);
+          new home().setVisible(true);
+           }
+        //save users details
+//else
+    //JOptionPane.showMessageDialog(null,"incorrect username or password");
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+     String password=jPasswordField1.getText();
+     String username=jTextField1.getText();
+    try{
+         Connection con=connectionprovider.getCon();
+         //Class.forName("com.mysql.jdbc.Driver");
+         //Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","Test","Test123");
+         Statement st=con.createStatement();
+         JOptionPane.showMessageDialog(null,"correct data");
+        //String sql="SELECT * FROM patient";
+        //st.executeQuery(sql);
+         st.executeUpdate("insert into login values('"+username+"','"+password+"');");       //st.executeUpdate("insert into patient values(35,'fa','07','6','m','fhh','dis','hhjk');");
+         JOptionPane.showMessageDialog(null,"succesfully updated");
+         setVisible(false);
+         new addpatientrecord().setVisible(true);
+         
+     }
+     catch(Exception e)
+     {
+         JOptionPane.showMessageDialog(null,e);
+         
+         
+     }
+} 
+    
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
